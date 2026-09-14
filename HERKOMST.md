@@ -2,7 +2,7 @@
 
 ## Oorspronkelijke browser
 
-Markdown Werkbank bouwt voort op de Markdown Browser van **Joost Plattel**. Hij beschrijft het idee van een lokaal HTML-bestand als app in [A file is the app](https://jplattel.nl/post/2026-03-10-a-file-is-the-app/), gepubliceerd op 10 maart 2026. Het artikel verwijst naar het [oorspronkelijke HTML-bestand](https://files.jplattel.nl/2026/03/X0dnV6.html).
+Markdown Werkbank bouwt voort op de Markdown Browser van **[Joost Plattel](https://github.com/jplattel)**. Hij beschrijft het idee van een lokaal HTML-bestand als app in [A file is the app](https://jplattel.nl/post/2026-03-10-a-file-is-the-app/), gepubliceerd op 10 maart 2026. Het artikel verwijst naar het [oorspronkelijke HTML-bestand](https://files.jplattel.nl/2026/03/X0dnV6.html).
 
 Erwin Blom heeft de browser verder laten ontwikkelen tot een Nederlandstalige offline werkplek met projectkeuze, bestandsbeheer, opgemaakte editor, Focus en neutrale voorbeeldprojecten.
 

@@ -2,6 +2,17 @@
 
 Een lokale Markdown-werkplek met opgemaakte editor, bestandsbeheer en Focus. Rood, zwart en wit. Je documenten blijven op je eigen computer. Geen account, AI, API-sleutel, server of installatie.
 
+## Gebouwd op het werk van Joost Plattel
+
+Markdown Werkbank bouwt voort op de **Markdown Browser van [Joost Plattel](https://github.com/jplattel)**. Zijn browser vormt de oorspronkelijke basis; Erwin Blom heeft die verder ontwikkeld tot deze Nederlandstalige Werkbank met projectkeuze, bestandsbeheer en visueel en Markdown-bewerken.
+
+- [Joost Plattel op GitHub](https://github.com/jplattel)
+- [De oorspronkelijke Markdown Browser (HTML-bestand)](https://files.jplattel.nl/2026/03/X0dnV6.html)
+- [Joosts toelichting: A file is the app](https://jplattel.nl/post/2026-03-10-a-file-is-the-app/)
+- [Herkomst, toestemming en licenties](HERKOMST.md)
+
+Dank aan Joost voor de basis en zijn toestemming om deze doorontwikkeling te delen.
+
 ![Markdown Werkbank met voorbeeldtekst](screenshot.png)
 
 **[Download de Werkbank](https://github.com/erwinblom/markdown-werkbank-offline/releases/latest/download/markdown-werkbank-offline.zip)** — pak de ZIP volledig uit en open `index.html` in Chrome of Edge.
