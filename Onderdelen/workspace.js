@@ -17,8 +17,8 @@ function toggleDocumentFocus() {
 function setOutlineVisibility(hasDocument) {
  const panel = document.getElementById('focusPanel');
  const button = document.getElementById('focusToggle');
- panel.hidden = !hasDocument || outlineHeadings.length < 2 || outlineCollapsed || documentFocused;
- button.hidden = !hasDocument || outlineHeadings.length < 2 || documentFocused;
+ panel.hidden = !hasDocument || outlineHeadings.length < 2 || outlineCollapsed;
+ button.hidden = !hasDocument || outlineHeadings.length < 2;
  button.textContent = panel.hidden ? 'Inhoud tonen' : 'Inhoud verbergen';
  button.setAttribute('aria-expanded', String(!panel.hidden));
  document.getElementById('app').classList.toggle('focus-hidden', panel.hidden);
