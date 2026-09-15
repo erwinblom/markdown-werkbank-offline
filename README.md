@@ -101,3 +101,5 @@ Bij opslaan van wijzigingen bewaart Werkbank eerst de vorige tekst in `.werkbank
 Kopieën blijven lokaal en worden niet automatisch opgeruimd. Na hernoemen of verplaatsen blijven eerdere kopieën op hun oorspronkelijke plek; ze verschijnen niet onder de nieuwe naam. Dit is versieherstel, geen prullenbak voor verwijderde bestanden.
 
 Bij de eerste opening toont Werkbank automatisch `00 - Begin hier.md` (of `Begin hier.md`) in de hoofdmap, als dat bestand bestaat. Daarna wordt het laatst geopende document hervat.
+
+De meegeleverde Begin hier-uitleg verschijnt al bij het openen van `index.html`, zonder maptoestemming. Na het koppelen van een werkmap hervat Werkbank je document. Bij wijzigingen aan de meegeleverde uitleg werkt `node scripts/embed-introduction.cjs` de ingebouwde versie bij.
