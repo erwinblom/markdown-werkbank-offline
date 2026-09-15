@@ -623,10 +623,20 @@
             restoreLastOpenFile();
         }
 
+        function initialDocumentPath(paths, saved, roots) {
+            if (saved && paths.includes(saved)) return saved;
+            for (const root of roots) {
+                const match = paths.find(path => path.slice(0, path.lastIndexOf('/')) === root && /^(?:00\s*-\s*)?begin hier\.md$/i.test(path.split('/').pop()));
+                if (match) return match;
+            }
+            return null;
+        }
+
         function restoreLastOpenFile() {
             if (activeFile) return;
             try {
-                const lastPath = localStorage.getItem('mw-document-'+selectedProject);
+                const savedPath = localStorage.getItem('mw-document-'+selectedProject);
+                const lastPath = initialDocumentPath(files.filter(f=>!f.isVirtual&&projectIncludes(f.relativePath)).map(f=>f.relativePath), savedPath, selectedProject==='all'?directoryHandles.map(h=>h.name):[selectedProject]);
                 if (!lastPath) return;
                 const idx = files.findIndex(f => f.relativePath === lastPath && projectIncludes(f.relativePath));
                 if (idx !== -1) {

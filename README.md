@@ -99,3 +99,5 @@ Bij **Nieuw** wordt Inbox voorgesteld binnen het geselecteerde project. De map w
 Bij opslaan van wijzigingen bewaart Werkbank eerst de vorige tekst in `.werkbank-herstel` naast het document. Kies **Meer → Vorige versie herstellen**, bekijk de kopie en kies **Deze versie terugzetten**. Ook bij terugzetten blijft de vervangen versie bewaard. Bij een mislukte herstelkopie wordt het origineel niet overschreven.
 
 Kopieën blijven lokaal en worden niet automatisch opgeruimd. Na hernoemen of verplaatsen blijven eerdere kopieën op hun oorspronkelijke plek; ze verschijnen niet onder de nieuwe naam. Dit is versieherstel, geen prullenbak voor verwijderde bestanden.
+
+Bij de eerste opening toont Werkbank automatisch `00 - Begin hier.md` (of `Begin hier.md`) in de hoofdmap, als dat bestand bestaat. Daarna wordt het laatst geopende document hervat.
