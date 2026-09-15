@@ -21,8 +21,9 @@ function updateProjectControls(){
  const target=document.getElementById('newItemTarget'),previous=target.value;
  const start=defaultStartPath();
  const paths=[...new Set([...(start?[start]:[]),...[...folderHandlesByPath.keys()].filter(projectIncludes)])].sort((a,b)=>a.localeCompare(b,'nl'));
- target.replaceChildren(...paths.map(p=>new Option(p+(p===start?' · startmap':''),p)));if(start)target.value=start;else if(paths.includes(previous))target.value=previous;
- document.getElementById('saveStartFolder').hidden=selectedProject==='all';
+ target.replaceChildren(...paths.map(p=>new Option(selectedProject==='all'?p:(p===selectedProject?'Hoofdmap':p.slice(selectedProject.length+1)),p)));if(start)target.value=start;else if(paths.includes(previous))target.value=previous;
+ document.getElementById('rememberDestinationLabel').hidden=selectedProject==='all';
+ try{document.getElementById('saveStartFolder').checked=localStorage.getItem('mw-start-'+selectedProject)===target.value;}catch{}
  document.getElementById('newItemTargetLabel').hidden=!paths.length;
  for(const id of ['newFileBtn','newFolderBtn'])document.getElementById(id).disabled=!paths.length;
 }
@@ -45,6 +46,7 @@ window.addEventListener('pagehide',rememberProject);
 
 window.addEventListener('DOMContentLoaded',()=>{
 document.getElementById('newMenu').ontoggle=event=>{if(event.target.open)updateProjectControls();};
-document.getElementById('saveStartFolder').onclick=()=>{const path=document.getElementById('newItemTarget').value;if(selectedProject==='all'||!path)return;try{localStorage.setItem('mw-start-'+selectedProject,path);showNotification('Startmap ingesteld','success');updateProjectControls();}catch{showNotification('Startmap kon niet worden bewaard in deze browser.','error');}};
+document.getElementById('newItemTarget').onchange=()=>{const target=document.getElementById('newItemTarget');try{document.getElementById('saveStartFolder').checked=localStorage.getItem('mw-start-'+selectedProject)===target.value;}catch{document.getElementById('saveStartFolder').checked=false;}};
+document.getElementById('saveStartFolder').onchange=event=>{const path=document.getElementById('newItemTarget').value;if(selectedProject==='all'||!path)return;try{if(event.target.checked)localStorage.setItem('mw-start-'+selectedProject,path);else localStorage.removeItem('mw-start-'+selectedProject);}catch{event.target.checked=false;showNotification('De bestemming kon niet worden onthouden in deze browser.','error');}};
 
 });

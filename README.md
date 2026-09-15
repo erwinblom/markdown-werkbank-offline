@@ -92,7 +92,7 @@ Lees [PRIVACY.md](PRIVACY.md) voor lokale opslag en externe media. Deze map is e
 
 ### Startmap per project
 
-Bij **Nieuw** wordt Inbox voorgesteld binnen het geselecteerde project. De map wordt pas bij het eerste document aangemaakt en blijft daarna ook leeg zichtbaar. Kies onder **Nieuw item in** een andere bestaande map voor een eenmalige bestemming, of klik **Gebruik als startmap** om die keuze voor dit project te bewaren. De voorkeur blijft lokaal in deze browser. Bij **Alle bestanden** kies je zelf een bestemming.
+Bij **Nieuw** wordt Inbox voorgesteld binnen het geselecteerde project. De map wordt pas bij het eerste document aangemaakt en blijft daarna ook leeg zichtbaar. Kies onder **Nieuw item in** een andere bestaande map voor een eenmalige bestemming, of vink **Onthoud deze bestemming** aan om die keuze voor dit project te bewaren. De voorkeur blijft lokaal in deze browser. Bij **Alle bestanden** kies je zelf een bestemming.
 
 ### Vorige versie herstellen
 
