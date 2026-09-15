@@ -89,3 +89,7 @@ De browserproef staat in `tests/smoke.cjs`. Met Node, Playwright en Chrome besch
 ## Privacy en uitgavestatus
 
 Lees [PRIVACY.md](PRIVACY.md) voor lokale opslag en externe media. Deze map is een voorbereidingspakket, nog geen openbare uitgave. De originele privéversie en privégeschiedenis horen niet in een publieke repository.
+
+### Startmap per project
+
+Bij **Nieuw** wordt Inbox voorgesteld binnen het geselecteerde project. De map wordt pas bij het eerste document aangemaakt en blijft daarna ook leeg zichtbaar. Kies onder **Nieuw item in** een andere bestaande map voor een eenmalige bestemming, of klik **Gebruik als startmap** om die keuze voor dit project te bewaren. De voorkeur blijft lokaal in deze browser. Bij **Alle bestanden** kies je zelf een bestemming.

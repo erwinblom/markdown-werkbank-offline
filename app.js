@@ -270,6 +270,8 @@
             let folderHandle = options.folderPath ? folderHandlesByPath.get(options.folderPath) : options.folderName
                 ? directoryHandles.find(handle => handle.name === options.folderName)
                 : directoryHandles[0];
+            const pendingInbox=!folderHandle&&options.folderPath?.endsWith('/Inbox')?folderHandlesByPath.get(options.folderPath.slice(0,-6)):null;
+            if(pendingInbox)folderHandle=pendingInbox;
             if (options.folderName && !folderHandle) {
                 return { ok: false, error: `Folder is not open: ${options.folderName}` };
             }
@@ -325,6 +327,7 @@
             }
             if (!filename.toLowerCase().endsWith('.md')) filename += '.md';
 
+            if(pendingInbox){try{folderHandle=await pendingInbox.getDirectoryHandle('Inbox',{create:true});folderHandlesByPath.set(options.folderPath,folderHandle);}catch(error){showNotification('Inbox kon niet worden aangemaakt.','error');return {ok:false,error:error.message};}}
             const existingNames = [];
             for await (const entry of folderHandle.values()) existingNames.push(entry.name.toLowerCase());
             if (existingNames.includes(filename.toLowerCase())) {
@@ -1219,10 +1222,10 @@
             const parentPath = file.relativePath.slice(0, file.relativePath.lastIndexOf('/'));
             const dialog = document.createElement('dialog');
             dialog.className = 'file-dialog';
-            dialog.innerHTML = `<form><h2>Naam wijzigen</h2>
+            dialog.innerHTML = `<form><h2>Hernoemen</h2>
                 <label>Bestandsnaam<br><input name="filename" required autocomplete="off" style="width:100%;padding:10px;font:inherit"></label>
                 <p>${wysiwygDirty ? 'Je tekstwijzigingen worden eerst opgeslagen. ' : ''}Het bestand blijft in dezelfde map. Links naar de oude naam worden niet aangepast.</p>
-                <p role="alert"></p><button type="button">Annuleren</button> <button type="submit">Naam wijzigen</button></form>`;
+                <p role="alert"></p><button type="button">Annuleren</button> <button type="submit">Hernoemen</button></form>`;
             const input = dialog.querySelector('input');
             input.value = file.name;
             const submit = dialog.querySelector('[type="submit"]');
@@ -1259,7 +1262,7 @@
         }
 
         function fileActions() {
-            const secondary = activeFile && !activeFile.isVirtual ? '<button class="edit-btn" onclick="openRenameFileDialog()">Naam wijzigen</button><button class="edit-btn" onclick="openMoveFileDialog()">Verplaatsen</button><button class="edit-btn delete-file-btn" onclick="openDeleteFileDialog()">Verwijderen</button>' : '';
+            const secondary = activeFile && !activeFile.isVirtual ? '<button class="edit-btn" onclick="openRenameFileDialog()">Hernoemen</button><button class="edit-btn" onclick="openMoveFileDialog()">Verplaatsen</button><button class="edit-btn delete-file-btn" onclick="openDeleteFileDialog()">Verwijderen</button>' : '';
             return `<div class="file-actions" role="group" aria-label="Bestandsacties">
                 <button class="edit-btn" onclick="toggleEditMode()">Bewerken</button>
                 ${secondary ? `<div class="file-secondary">${secondary}</div><details class="file-more"><summary class="edit-btn">Meer</summary><div class="file-more-panel" onclick="this.closest('details').open=false">${secondary}</div></details>` : ''}
@@ -1647,7 +1650,7 @@
                         </svg>
                         Opslaan
                     </button>
-                    ${activeFile && !activeFile.isVirtual ? `<details class="file-more"><summary class="edit-btn">Meer</summary><div class="file-more-panel" onclick="this.closest('details').open=false"><button class="edit-btn" onclick="openRenameFileDialog()">Naam wijzigen</button><button class="edit-btn" onclick="openMoveFileDialog()">Verplaatsen</button><button class="edit-btn delete-file-btn" onclick="openDeleteFileDialog()">Verwijderen</button></div></details>` : ''}
+                    ${activeFile && !activeFile.isVirtual ? `<details class="file-more"><summary class="edit-btn">Meer</summary><div class="file-more-panel" onclick="this.closest('details').open=false"><button class="edit-btn" onclick="openRenameFileDialog()">Hernoemen</button><button class="edit-btn" onclick="openMoveFileDialog()">Verplaatsen</button><button class="edit-btn delete-file-btn" onclick="openDeleteFileDialog()">Verwijderen</button></div></details>` : ''}
                     </div>
                 </div>
                 <div class="editor-container visible">
