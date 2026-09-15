@@ -13,16 +13,16 @@ Markdown Werkbank bouwt voort op de **Markdown Browser van [Joost Plattel](https
 
 Dank aan Joost voor de basis en zijn toestemming om deze doorontwikkeling te delen.
 
-![Markdown Werkbank met voorbeeldtekst](screenshot.png)
+![Markdown Werkbank met voorbeeldtekst](Onderdelen/screenshot.png)
 
-**[Download de Werkbank](https://github.com/erwinblom/markdown-werkbank-offline/releases/latest/download/markdown-werkbank-offline.zip)** — pak de ZIP volledig uit en open `index.html` in Chrome of Edge.
+**[Download de Werkbank](https://github.com/erwinblom/markdown-werkbank-offline/releases/latest/download/markdown-werkbank-offline.zip)** — pak de ZIP volledig uit en open `▶ Begin hier.html` in Chrome of Edge.
 
 **Begin met [START HIER.txt](START%20HIER.txt).** Dit is de zelfstandige offline versie, zonder AI-schrijfpartner.
 
 ## Beginnen
 
 1. Pak de volledige ZIP uit op een vaste plek op je computer.
-2. Open **index.html in Google Chrome of Microsoft Edge** op je computer (rechtermuisknop → Open met).
+2. Open **▶ Begin hier.html in Google Chrome of Microsoft Edge** op je computer (rechtermuisknop → Open met).
 3. Kies **+ Project toevoegen**, selecteer een werkmap en geef toestemming. Je nieuwe project wordt meteen geselecteerd. Herhaal dit om meer projecten toe te voegen.
 4. Open links een Markdown-bestand en kies **Bewerken**.
 
@@ -102,4 +102,6 @@ Kopieën blijven lokaal en worden niet automatisch opgeruimd. Na hernoemen of ve
 
 Bij de eerste opening toont Werkbank automatisch `00 - Begin hier.md` (of `Begin hier.md`) in de hoofdmap, als dat bestand bestaat. Daarna wordt het laatst geopende document hervat.
 
-De meegeleverde Begin hier-uitleg verschijnt al bij het openen van `index.html`, zonder maptoestemming. Na het koppelen van een werkmap hervat Werkbank je document. Bij wijzigingen aan de meegeleverde uitleg werkt `node scripts/embed-introduction.cjs` de ingebouwde versie bij.
+De meegeleverde Begin hier-uitleg verschijnt al bij het openen van `▶ Begin hier.html`, zonder maptoestemming. Na het koppelen van een werkmap hervat Werkbank je document. Bij wijzigingen aan de meegeleverde uitleg werkt `node Onderdelen/scripts/embed-introduction.cjs` de ingebouwde versie bij.
+
+De ZIP bevat slechts drie ingangen: **▶ Begin hier.html**, **Werkbank** en **Onderdelen**. Laat deze bij elkaar staan. Ondersteunende bestanden en documentatie zitten in Onderdelen. De sortering in Finder of Verkenner blijft afhankelijk van je instellingen.

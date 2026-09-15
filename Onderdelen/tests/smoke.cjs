@@ -6,7 +6,7 @@ const path=require('node:path');
  try {
  const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[],network=[];
  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))network.push(r.url());});
- await page.goto('file://'+path.resolve(__dirname,'../index.html'));
+ await page.goto('file://'+path.resolve(__dirname,'../../▶ Begin hier.html'));
  await page.waitForTimeout(300);
  await page.evaluate(async()=>{
  function dir(name){const entries=new Map();return {name,kind:'directory',entries,async isSameEntry(other){return this===other},async queryPermission(){return 'granted'},async requestPermission(){return 'granted'},async *values(){yield* entries.values()},async getFileHandle(n,o){if(entries.has(n)){if(entries.get(n).kind!=='file')throw new DOMException('directory','TypeMismatchError');return entries.get(n);}if(!o?.create)throw new DOMException('missing','NotFoundError');const f={name:n,kind:'file',data:'',async queryPermission(){return 'granted'},async requestPermission(){return 'granted'},async getFile(){return new File([this.data],this.name)},async createWritable(){return {write:async v=>{f.data=typeof v==='string'?v:await new Blob([v]).text()},close:async()=>{}}},async isSameEntry(other){return this===other}};entries.set(n,f);return f;},async getDirectoryHandle(n,o){if(entries.has(n))return entries.get(n);if(!o?.create)throw new DOMException('missing','NotFoundError');const d=dir(n);entries.set(n,d);return d},async removeEntry(n){entries.delete(n)}}}

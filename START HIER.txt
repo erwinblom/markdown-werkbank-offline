@@ -1,7 +1,7 @@
 MARKDOWN WERKBANK — STARTEN
 
 1. Pak de volledige ZIP uit op een vaste plek op je computer.
-2. Klik met rechts op index.html en kies Open met → Google Chrome
+2. Klik met rechts op ▶ Begin hier.html en kies Open met → Google Chrome
    of Microsoft Edge. Open niet alleen het HTML-bestand vanuit de ZIP.
 3. Klik op + Project toevoegen.
 4. Kies de meegeleverde map Werkbank en geef toestemming.
@@ -12,7 +12,7 @@ Klaar. Je hebt geen account, installatie of API-sleutel nodig.
 De drie voorbeeldprojecten bevatten alleen oefenteksten.
 
 Je eigen bestanden gebruiken? Voeg daarna je eigen werkmap toe.
-Houd index.html, alle scripts, stijlen en vendor bij elkaar.
+Houd ▶ Begin hier.html, alle scripts, stijlen en vendor bij elkaar.
 
 WERKT IETS NIET?
 - Geen mapkeuze: controleer dat je Chrome of Edge op een computer gebruikt.
