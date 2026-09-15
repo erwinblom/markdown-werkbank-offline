@@ -93,3 +93,9 @@ Lees [PRIVACY.md](PRIVACY.md) voor lokale opslag en externe media. Deze map is e
 ### Startmap per project
 
 Bij **Nieuw** wordt Inbox voorgesteld binnen het geselecteerde project. De map wordt pas bij het eerste document aangemaakt en blijft daarna ook leeg zichtbaar. Kies onder **Nieuw item in** een andere bestaande map voor een eenmalige bestemming, of klik **Gebruik als startmap** om die keuze voor dit project te bewaren. De voorkeur blijft lokaal in deze browser. Bij **Alle bestanden** kies je zelf een bestemming.
+
+### Vorige versie herstellen
+
+Bij opslaan van wijzigingen bewaart Werkbank eerst de vorige tekst in `.werkbank-herstel` naast het document. Kies **Meer → Vorige versie herstellen**, bekijk de kopie en kies **Deze versie terugzetten**. Ook bij terugzetten blijft de vervangen versie bewaard. Bij een mislukte herstelkopie wordt het origineel niet overschreven.
+
+Kopieën blijven lokaal en worden niet automatisch opgeruimd. Na hernoemen of verplaatsen blijven eerdere kopieën op hun oorspronkelijke plek; ze verschijnen niet onder de nieuwe naam. Dit is versieherstel, geen prullenbak voor verwijderde bestanden.

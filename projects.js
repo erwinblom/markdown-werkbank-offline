@@ -43,5 +43,8 @@ function moveDestinationPaths(paths,source,root,outside=false,query=''){const te
 function newFileProjectCode(){return '';}
 window.addEventListener('pagehide',rememberProject);
 
+window.addEventListener('DOMContentLoaded',()=>{
 document.getElementById('newMenu').ontoggle=event=>{if(event.target.open)updateProjectControls();};
 document.getElementById('saveStartFolder').onclick=()=>{const path=document.getElementById('newItemTarget').value;if(selectedProject==='all'||!path)return;try{localStorage.setItem('mw-start-'+selectedProject,path);showNotification('Startmap ingesteld','success');updateProjectControls();}catch{showNotification('Startmap kon niet worden bewaard in deze browser.','error');}};
+
+});

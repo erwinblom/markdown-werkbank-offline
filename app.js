@@ -1262,7 +1262,7 @@
         }
 
         function fileActions() {
-            const secondary = activeFile && !activeFile.isVirtual ? '<button class="edit-btn" onclick="openRenameFileDialog()">Hernoemen</button><button class="edit-btn" onclick="openMoveFileDialog()">Verplaatsen</button><button class="edit-btn delete-file-btn" onclick="openDeleteFileDialog()">Verwijderen</button>' : '';
+            const secondary = activeFile && !activeFile.isVirtual ? '<button class="edit-btn" onclick="openRenameFileDialog()">Hernoemen</button><button class="edit-btn" onclick="openMoveFileDialog()">Verplaatsen</button><button class="edit-btn" onclick="openRecoveryDialog()">Vorige versie herstellen</button><button class="edit-btn delete-file-btn" onclick="openDeleteFileDialog()">Verwijderen</button>' : '';
             return `<div class="file-actions" role="group" aria-label="Bestandsacties">
                 <button class="edit-btn" onclick="toggleEditMode()">Bewerken</button>
                 ${secondary ? `<div class="file-secondary">${secondary}</div><details class="file-more"><summary class="edit-btn">Meer</summary><div class="file-more-panel" onclick="this.closest('details').open=false">${secondary}</div></details>` : ''}
@@ -1650,7 +1650,7 @@
                         </svg>
                         Opslaan
                     </button>
-                    ${activeFile && !activeFile.isVirtual ? `<details class="file-more"><summary class="edit-btn">Meer</summary><div class="file-more-panel" onclick="this.closest('details').open=false"><button class="edit-btn" onclick="openRenameFileDialog()">Hernoemen</button><button class="edit-btn" onclick="openMoveFileDialog()">Verplaatsen</button><button class="edit-btn delete-file-btn" onclick="openDeleteFileDialog()">Verwijderen</button></div></details>` : ''}
+                    ${activeFile && !activeFile.isVirtual ? `<details class="file-more"><summary class="edit-btn">Meer</summary><div class="file-more-panel" onclick="this.closest('details').open=false"><button class="edit-btn" onclick="openRenameFileDialog()">Hernoemen</button><button class="edit-btn" onclick="openMoveFileDialog()">Verplaatsen</button><button class="edit-btn" onclick="openRecoveryDialog()">Vorige versie herstellen</button><button class="edit-btn delete-file-btn" onclick="openDeleteFileDialog()">Verwijderen</button></div></details>` : ''}
                     </div>
                 </div>
                 <div class="editor-container visible">
@@ -1793,9 +1793,7 @@
                     
                     if (await (await activeFile.getFile()).text() !== originalRawContent) throw Error('Dit bestand is buiten de Werkbank gewijzigd. Je bewerking blijft in de editor; heropen het bestand voordat je verdergaat.');
                     // Get a writable stream from the file handle
-                    const writable = await activeFile.createWritable();
-                    await writable.write(newContent);
-                    await writable.close();
+                    await replaceWithRecovery(activeFile, folderHandlesByPath.get(activeFile.relativePath.split('/').slice(0,-1).join('/')), originalRawContent, newContent);
                 }
                 
                 // Update cached content
