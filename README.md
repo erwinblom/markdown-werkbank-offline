@@ -6,6 +6,8 @@ Een lokale Markdown-werkplek met opgemaakte editor, bestandsbeheer en Focus. Roo
 
 Markdown Werkbank bouwt voort op de **Markdown Browser van [Joost Plattel](https://github.com/jplattel)**. Zijn browser vormt de oorspronkelijke basis; Erwin Blom heeft die verder ontwikkeld tot deze Nederlandstalige Werkbank met projectkeuze, bestandsbeheer en visueel en Markdown-bewerken.
 
+Het auteursrecht op het oorspronkelijke werk blijft bij Joost Plattel. Het auteursrecht op de beschermde toevoegingen en wijzigingen ligt bij Erwin Blom en eventuele andere bijdragers. Daarom vermeldt de licentie beide namen. De software wordt verspreid onder de [MIT-licentie](LICENSE).
+
 - [Joost Plattel op GitHub](https://github.com/jplattel)
 - [De oorspronkelijke Markdown Browser (HTML-bestand)](https://files.jplattel.nl/2026/03/X0dnV6.html)
 - [Joosts toelichting: A file is the app](https://jplattel.nl/post/2026-03-10-a-file-is-the-app/)
